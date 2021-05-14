@@ -1,0 +1,64 @@
+USE product;
+DROP TABLE IF EXISTS `items`;
+CREATE TABLE `items` (
+  `id` INT(10) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `name` VARCHAR(64) NULL DEFAULT NULL COMMENT '商品名' COLLATE 'utf8_unicode_ci',
+  `description` VARCHAR(1024) NULL DEFAULT NULL COMMENT '商品説明' COLLATE 'utf8_unicode_ci',
+  `price` INT(11) NOT NULL COMMENT '商品価格',
+  `delete_flg` TINYINT(4) NULL DEFAULT '0' COMMENT '論理削除フラグ',
+  `created` DATETIME NULL DEFAULT NULL COMMENT '作成日時',
+  `modified` DATETIME NULL DEFAULT NULL COMMENT '更新日時',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE='utf8_unicode_ci' COMMENT='items';
+
+
+DROP TABLE IF EXISTS `images`;
+CREATE TABLE IF NOT EXISTS `images` (
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `data` MEDIUMBLOB COMMENT '画像データ',
+  `items_id` INT(11) NOT NULL COMMENT '商品ID',
+  `delete_flg` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT '論理削除フラグ',
+  `created` DATETIME DEFAULT NULL COMMENT '作成日時',
+  `modified` DATETIME DEFAULT NULL COMMENT '更新日時',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE='utf8_unicode_ci' COMMENT='images';
+
+DROP TABLE IF EXISTS `items_tags`;
+CREATE TABLE IF NOT EXISTS `items_tags` (
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `items_id` INT(10) NOT NULL COMMENT '商品ID',
+  `tags_id` INT(10) UNSIGNED NOT NULL COMMENT 'タグID',
+  `delete_flg` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT '論理削除フラグ',
+  `created` DATETIME DEFAULT NULL COMMENT '作成日時',
+  `modified` DATETIME DEFAULT NULL COMMENT '更新日時',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE='utf8_unicode_ci' COMMENT='items_tags';
+
+DROP TABLE IF EXISTS `tags`;
+CREATE TABLE IF NOT EXISTS `tags` (
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `name` VARCHAR(64) NULL DEFAULT NULL COMMENT '商品名' COLLATE 'utf8_unicode_ci',
+  `delete_flg` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT '論理削除フラグ',
+  `created` DATETIME DEFAULT NULL COMMENT '作成日時',
+  `modified` DATETIME DEFAULT NULL COMMENT '更新日時',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE='utf8_unicode_ci' COMMENT='tags';
+
+DROP TABLE IF EXISTS `users_login`;
+CREATE TABLE IF NOT EXISTS `users_login` (
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `username` VARCHAR(255) NULL DEFAULT NULL COMMENT 'ユーザー名' COLLATE 'utf8_unicode_ci',
+  `password` VARCHAR(60) NULL DEFAULT NULL COMMENT 'パスワード' COLLATE 'utf8_unicode_ci',
+  `role` VARCHAR(255) NULL DEFAULT NULL COMMENT '権限' COLLATE 'utf8_unicode_ci',
+  `delete_flg` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT '論理削除フラグ',
+  `created` DATETIME DEFAULT NULL COMMENT '作成日時',
+  `modified` DATETIME DEFAULT NULL COMMENT '更新日時',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE='utf8_unicode_ci' COMMENT='users_login';
+
+
+
+
+
+
+

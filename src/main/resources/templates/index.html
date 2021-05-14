@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+	<meta charset="UTF-8" />
+	<title>Disney Films Menu</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+	<h1>Disney Films Menu</h1>
+	<div id="newitem" sec:authorize="hasRole('ROLE_ADMIN')">
+		<a th:href="@{/items/edit?id=new}" class="button">商品情報追加</a>
+	</div>
+	<div>
+		<span>
+			<a onClick="return confirm('ログアウトしますか？')"
+						th:href="@{/logout}">[ログアウト]</a>
+		</span>
+	</div>
+	<hr />
+<!-- キーワード検索 -->
+	<div id="searchForm">
+		<div class="title">
+			<Strong>検索機能</Strong>
+		</div>
+		<hr />
+		<div class="search">
+			<form method="get" th:action="@{/index/search}" th:object="${searchForm}">
+				<label>キーワード</label><br />
+				<input type="text" name="keyword" th:field="*{keyword}" /><br />
+				<div class="conditions">
+					<select name="conditions">
+						<option th:value="1" th:field="*{conditions}" selected="selected">全てのキーワードを含む</option>
+						<option th:value="2" th:field="*{conditions}">いずれかのキーワードを含む</option>
+					</select>
+				</div>
+				<hr />
+				<label>価格</label><br />
+				<input type="number" min="0" max="2147483647" name="minPrice" th:field="*{minPrice}" />
+				<label>円～</label><br />
+				<label></label>
+				<input type="number" min="0" max="2147483647" name="maxPrice" th:field="*{maxPrice}" />
+				<label>円</label><hr />
+				<div class="title">
+					<Strong>ジャンル検索</Strong>
+				</div>
+				<hr/>
+				<div class="tags">
+					<th:block th:each="tags : ${tagsList}">
+						<input type="checkbox" th:value="${tags.id}" th:field="*{tags}" />
+						<span th:text="${tags.name}"></span><br />
+					</th:block>
+				</div>
+				<hr />
+				<div class="title">
+					<Strong>条件並び替え</Strong>
+				</div>
+				<hr />
+				<div class="sort">
+					<input type="radio" th:value="id" id="sort1" name="sort" checked="checked" />
+					<label>商品ID</label>
+					<br />
+					<input type="radio" th:value="name" id="sort2" name="sort" />
+					<label>商品名</label>
+					<br />
+					<input type="radio" th:value="price" id="sort3" name="sort" />
+					<label>商品価格</label>
+					<br />
+					<input type="radio" th:value="modified" id="sort4" name="sort" />
+					<label>更新日時</label>
+					<br />
+					<input type="radio" th:value="created" id="sort5" name="sort" />
+					<label>作成日時</label>
+				</div>
+				<hr />
+				<div class="title">
+					<Strong>並び替え順</Strong>
+				</div>
+				<hr />
+				<div class="sortSc">
+					<input type="radio" value="true" id="sortScDESC" name="sortSc" checked="checked" />
+					<label>降順</label>
+					<input type="radio" value="false" id="sortScASC" name="sortSc" />
+					<label>昇順</label>
+				</div>
+				<hr />
+				<input class="botton" type="submit" value="検索" />
+			</form>
+		</div>
+	</div>
+
+ 	<div id="itemsList">
+  		<th:block th:each="items : ${itemsList}" th:object="${items}">
+ 			<div class="items">
+ 				<div class = "imageList">
+ 					<div class="image">
+						<th:block th:if="${not #lists.isEmpty(items.imageList)}">
+							<a th:href="@{images/__*{imageList[0].Id}__}" target="_blank">
+							<img th:src="'images/' + *{imageList[0].Id}" alt="" class="cover" />
+							</a>
+						</th:block>
+					</div>
+				</div>
+				<div class="itemstext">
+					<div class="id" sec:authorize="hasRole('ROLE_ADMIN')">
+						<label>商品ID</label>
+						<span th:text="*{id}" >1</span>
+						<hr />
+					</div>
+					<div class="task" sec:authorize="hasRole('ROLE_ADMIN')">
+						<span><a th:href="@{/items/edit?id=__*{id}__}">[修正]</a></span>
+						<span>
+							<a onClick="return confirm('削除してよろしいですか？')"
+								th:href="@{/items/remove?id=__*{id}__}">[削除]</a>
+						</span>
+						<hr />
+					</div>
+
+
+
+
+					<div id="name">
+						<label>商品名</label>
+						<span th:text="*{name}">商品名</span>
+					</div>
+					<hr />
+					<div class="price">
+						<label>商品価格</label>
+						<span th:text="*{price}">商品価格</span>
+						<label>円</label>
+					</div>
+					<hr />
+					<div th:if="${searchForm.id != null}" class="tags">
+						<label>商品ジャンル:</label>
+						<div>
+							<th:block th:each="itemsTags, notSelected : *{itemsTagsList}" th:object="${itemsTags}">
+								<span th:text="*{tags.name}"></span>
+								<span th:unless="${notSelected.last}"><br /></span>
+							</th:block>
+						</div>
+						<hr/>
+					</div>
+					<div class="description">
+						<div th:if="${searchForm.id == null}" class="descriptionEll">
+							<label>商品説明</label><hr />
+							<span th:utext="*{description}">商品説明</span>
+						</div>
+						<div th:if="${searchForm.id == null}" class="descriptionElls">
+							<p>
+								<a th:href="@{/index/search?id=__*{id}__}">商品詳細ページへ</a>
+							</p>
+						</div>
+						<div th:if="${searchForm.id != null}" class="descriptionPro">
+							<label>商品説明</label><hr />
+							<span th:utext="*{description}">商品説明</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</th:block>
+	</div>
+
+	<div id="footer">
+		<span><a th:href="@{/index/search?searchForm=}">[TOPへ]</a></span>
+		<span><a th:href="@{/login/complete}">[MENUへ]</a></span><br />
+
+
+	 	<div th:fragment='paginationbar' th:if="${searchForm.id == null}" >
+		<ul>
+			<li th:class="${page.first} ? 'disabled':''" style="display:inline">
+				<span th:if="${page.first}">←先頭</span>
+				<a th:if="${not page.first}" th:href="@{${url}(page=0)}">←先頭</a>
+			</li>
+			<li th:each='i : ${#numbers.sequence(0, page.totalPages-1)}'
+				th:class="(${i}==${page.number})? 'active' : ''" style="display:inline">
+				<span th:if='${i}==${page.number}' th:text='${i+1}'>1</span>
+				<a th:if='${i}!=${page.number}' th:href="@{/index/search(page=${i})}">
+					<span th:text='${i+1}'>1</span>
+				</a>
+			</li>
+			<li th:class="${page.last} ? 'disabled':''" style="display:inline">
+				<span th:if="${page.last}">末尾➝</span>
+				<a th:if="${not page.last}" th:href="@{${url}(page=(${page.totalPages}-1))}">末尾➝</a>
+			</li>
+		</ul>
+		</div>
+	</div>
+</body>
+</html>

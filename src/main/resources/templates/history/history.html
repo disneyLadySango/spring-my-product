@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if (IE 9)]><html class="no-js ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!-->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	  lang="en-US"> <!--<![endif]-->
+<head>
+
+<!-- Meta Tags -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>Disney History</title>
+
+<meta name="description" content="Insert Your Site Description" />
+
+<!-- Mobile Specifics -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="MobileOptimized" content="320" />
+
+<!-- Bootstrap -->
+<link th:href="@{/css/history/bootstrap.min.css}" rel="stylesheet" />
+
+<!-- Main Style -->
+<link th:href="@{/css/history/main.css}" rel="stylesheet" />
+
+<!-- Supersized -->
+<link th:href="@{/css/history/supersized.css}" rel="stylesheet" />
+<link th:href="@{/css/history/supersized.shutter.css}" rel="stylesheet" />
+
+<!-- FancyBox -->
+<link th:href="@{/css/history/fancybox/jquery.fancybox.css}" rel="stylesheet" />
+
+<!-- Font Icons -->
+<link th:href="@{/css/history/fonts.css}" rel="stylesheet" />
+
+<!-- Shortcodes -->
+<link th:href="@{/css/history/shortcodes.css}" rel="stylesheet" />
+
+<!-- Responsive -->
+<link th:href="@{/css/history/bootstrap-responsive.min.css}" rel="stylesheet" />
+<link th:href="@{/css/history/responsive.css}" rel="stylesheet" />
+
+<!-- Supersized -->
+<link th:href="@{/css/history/supersized.css}" rel="stylesheet" />
+<link th:href="@{/css/history/supersized.shutter.css}" rel="stylesheet" />
+
+<!-- Google Font -->
+<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900' rel='stylesheet' type='text/css' />
+
+<!-- Fav Icon -->
+<link rel="shortcut icon" href="#" />
+
+<link rel="apple-touch-icon" href="#" />
+<link rel="apple-touch-icon" sizes="114x114" href="#" />
+<link rel="apple-touch-icon" sizes="72x72" href="#" />
+<link rel="apple-touch-icon" sizes="144x144" href="#" />
+
+<!-- Modernizr -->
+<script th:src="@{/js/history/modernizr.js}"></script>
+
+<!-- Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'Insert Your Code']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Analytics -->
+
+</head>
+
+
+<body>
+
+<!-- This section is for Splash Screen -->
+<div class="ole">
+<section id="jSplash">
+	<div id="circle"></div>
+</section>
+</div>
+<!-- End of Splash Screen -->
+
+
+
+<!-- Header -->
+<header>
+    <div class="sticky-nav">
+    	<a id="mobile-nav" class="menu-nav" href="#menu-nav"></a>
+
+        <div id="logo">
+        	<a id="goUp" href="#home-slider" title="Brushed | Responsive One Page Template">Brushed Template</a>
+        </div>
+        <nav id="menu">
+        	<ul id="menu-nav">
+            	<li><a href="#work">ART HISTORY</a></li>
+                <li><a href="#about">LEGEND</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+<!-- End Header -->
+
+<!-- Our Work Section -->
+<div id="work" class="page">
+	<div class="container">
+    	<!-- Title Page -->
+        <div class="row">
+            <div class="span12">
+                <div class="title-page">
+                    <h2 class="title">Disney Arts</h2>
+                    <h3 class="title-description">Walt Disney History <a href="http://da2017.jp/index.html" target="_blank">Art Work</a>.</h3>
+                </div>
+            </div>
+        </div>
+        <!-- End Title Page -->
+
+        <!-- Portfolio Projects -->
+        <div class="row">
+        	<div class="span3">
+            	<!-- Filter -->
+                <nav id="options" class="work-nav">
+                    <ul id="filters" class="option-set" data-option-key="filter">
+                    	<li class="type-work">Type of Work</li>
+                    	<li><a href="#filter" data-option-value="*" class="selected">All Chapter</a></li>
+                        <li><a href="#filter" data-option-value=".Main" >MAIN</a></li>
+                        <li><a href="#filter" data-option-value=".Chapter1">動き出すいのち</a></li>
+                        <li><a href="#filter" data-option-value=".Chapter2">魔法のはじまり</a></li>
+                        <li><a href="#filter" data-option-value=".Chapter3">魔法の使い手たち</a></li>
+                        <li><a href="#filter" data-option-value=".Chapter4">新たな次元へ</a></li>
+                        <li><a href="#filter" data-option-value=".Chapter5">つながるいのち</a></li>
+                    </ul>
+                </nav>
+                <!-- End Filter -->
+            </div>
+
+            <div class="span9">
+            	<div class="row">
+                	<section id="projects">
+                    	<ul id="thumbs">
+
+							<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Main">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="重力をもったキャラクターたちの誕生" th:href="@{/images/history/work/full/image-01-full.jpg}">
+                                	<span class="overlay-img">Chapter1 動き出すいのち</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-01.jpg}" alt="回転する円筒をスリットから覗き込むと絵が動いて見える“ゾートロープ”、重ねられた紙をパラパラとめくることで、そこに描かれている絵が動いて見える“パラパラマンガ”。アニメーションのルーツはそんな素朴な“動かす喜び”から始まった。1928年、ウォルト・ディズニーは『蒸気船ウィリー』を公開。一枚の絵に“いのちを吹き込む魔法”の歴史はここから始まったのである。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+							<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Main">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="あくなき研究と開発の日々" th:href="@{/images/history/work/full/image-02-full.jpg}">
+                                	<span class="overlay-img">Chapter2 魔法のはじまり</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-02.jpg}" alt="ウォルト・ディズニーは、“キャラクターとアニメーションの動きに合った音楽を付ける”というミッキーマウスの短編を作ると同時に、“音楽に合わせてキャラクターやアニメーションを作る”というシリー・シンフォニーの短編制作を開始。この二つのシリーズで作画や映像の技法や表現を試行錯誤し、アニメーションならではの、“いのちを吹き込む魔法”を磨き上げていった。そして、これらのノウハウをもとに大きな賭け、世界初の長編カラーアニメーション映画の制作に立ち向かっていく。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+							<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Main">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="表現の多様化とひろがる世界" th:href="@{/images/history/work/full/image-03-full.jpg}">
+                                	<span class="overlay-img">Chapter3 魔法の使い手たち</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-03.jpg}" alt="1950年代に入ると『ふしぎの国のアリス』や『眠れる森の美女』など、立て続けに名作を生み出した。ここでは、ナイン・オールド・メンをはじめとするベテランアニメーターたちと、メアリー・ブレアやアイヴァンド・アールなど新進気鋭のアーティストたちが作り上げたアートスタイルの異なる作品群がさらにディズニー作品の世界観をひろげることになった。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+							<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Main">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="デジタル、ミュージカルの海へ" th:href="@{/images/history/work/full/image-22-full.jpg}">
+                                	<span class="overlay-img">Chapter4 新たな次元へ</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-22.jpg}" alt="『リトル・マーメイド』のヒットをきっかけに、ディズニー・アニメーションは見事に復活、二度目の黄金時代を迎える。この頃より、ＣＧをはじめとしたデジタル技術を徐々に取り入れ、デジタルならではの表現をも追求していく。また、自らの意思で力強く生きるプリンセスやヒーローたちを盛り立てる、豪華絢爛なミュージカルシーンや美しい楽曲が、観る者の心を掴んだ。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+							<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Main">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="多様な社会や地球の未来に向けて" th:href="@{/images/history/work/full/image-23-full.jpg}">
+                                	<span class="overlay-img">Chapter5 つながるいのち</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-23.jpg}" alt="1995年、世界初のフル３DCG映画『トイ・ストーリー』が公開された。アニメーションは、ここで３DCGという新たな魔法を手に入れた。2006年にディズニーとピクサーが一緒になってからは、ジョン・ラセターが両社の作品の製作総指揮としてクオリティ管理を担当。作品では、多様な価値観や地球の未来など、より社会的なテーマが色濃く描かれていく。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+                        	<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter3">
+                            	<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="わんわん物語(1955)" th:href="@{/images/history/work/full/image-19-full.jpg}">
+                                	<span class="overlay-img">Chapter3 Lady and the Tramp</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-19.jpg}" alt="コッカースパニエル犬のレディと野良犬のトランプの交流を描いた『わんわん物語』は、原作を持たないオリジナルストーリーである。また、長編としては初めて、シネマスコープ+という横長のワイド画面で制作された。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+                        	<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter4">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="リトル・マーメイド(1989)" th:href="@{/images/history/work/full/image-17-full.jpg}">
+                                	<span class="overlay-img">Chapter4 The Little Mermaid</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-17.jpg}" alt="ディズニー新時代の幕開けを飾るのは、アンデルセンの名作『人魚姫』を大胆にアレンジした『リトル・マーメイド』。悲哀に満ちた原作のヒロインは、明るく現代的なプリンセスとなり、老若男女が楽しめる作品として大ヒットした。物語の約３分の２が海のシーンのため、さまざまな特殊効果を駆使して、水面や波、水中のゆらめきなどを表現。この作品では、１シーンのみ革命的なコンピュータ・アニメーション・プロダクション・システムによって描かれている。CAPSと呼ばれるこのコンピュータ・システムは、本作品以降のディズニー作品の基礎となった。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+                        	<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter2">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="白雪姫(1937)" th:href="@{/images/history/work/full/image-06-full.jpg}">
+                                	<span class="overlay-img">Chapter2 Snow White</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-06.jpg}" alt="1934年、ディズニー・スタジオは、長編アニメーション映画の制作に入る。短編映画制作で培われたトーキーというサウンド技術、テクニカラーという色彩技術に加えて、ストーリーボードを用いての制作体制の構築、スタジオ内にアニメーションスクールを作っての人材育成など、さまざまな取り組みがなされ、莫大な費用と時間を掛けて制作された『白雪姫』は1937年に完成。世界初の長編カラーアニメーション映画が誕生した。劇場公開されると空前の大ヒットとなった。アニメーション映画を芸術の域に高め、今に続くディズニー長編アニメーション作品の第一歩はここから始まった。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+							<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter1">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="蒸気船ウィリー(1928)" th:href="@{/images/history/work/full/image-04-full.jpg}">
+                                	<span class="overlay-img">Chapter1 Steamboat Willie</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-04.jpg}" alt="1920年代末、映画界がサイレント（無声映画）から動きと音が完全にシンクロしたトーキーへと移り変わる技術革新の狭間に、ミッキーマウスは誕生した。トーキーによって、映画はサウンド（音楽、声、効果音など）を手に入れ、『蒸気船ウィリー』は、その新技術をフル活用した、世界初のトーキー・アニメーション映画となった。じつはその少し前に『プレーン・クレイジー』と『ギャロッピン・ガウチョ』というミッキーマウスのデビュー作がサイレント映画で作られていたが、この２本の前に『蒸気船ウィリー』を公開。なお、ミッキーの声は、ウォルト自らが担当。まさにミッキーはウォルトの分身であったといえる。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+							<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter3">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="ふしぎの国のアリス(1951)" th:href="@{/images/history/work/full/image-05-full.jpg}">
+                                	<span class="overlay-img">Chapter3 Alice in Wonderland</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-05.jpg}" alt="ルイス・キャロルの小説『不思議の国のアリス』の長編映画化は、ウォルトにとって念願の企画だった。原作の映像化は難航したが、コンセプト・アーティストのメアリー・ブレアが原作の自由奔放なイメージをカラフルな色彩で絵に起こし、アニメーターのウォード・キンボールがチェシャ猫の奇想天外な動きを巧みに表現するなど、優れたスタッフの手腕により、映画は中期ディズニーを代表する作品となった。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+                        	<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter5">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="塔の上のラプンツェル(2010)" th:href="@{/images/history/work/full/image-27-full.jpg}">
+                                	<span class="overlay-img">Chapter5 Tangled</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-27.jpg}" alt="グリム童話の『髪長姫』を原作に、ディズニー長編アニメーション50作記念作品として制作された。スタッフは、ディズニー作品がこれまで培ってきた伝統的な手描きアニメーションのぬくもりと、最新の３DCGの融合を目指した。本作に企画段階から携わり、製作総指揮を務めたのは、『美女と野獣』や『ポカホンタス』を手掛けたベテランアニメーターのグレン・キーン。手描きアニメーションの技法を熟知した彼のもとで、CGスタッフは、本作品の命ともいえるヒロイン・ラプンツェルの長い髪を活き活きと感情を持っているがごとく表現することなどに挑戦している。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+                        	<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter2">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="ピノキオ(1940)" th:href="@{/images/history/work/full/image-09-full.jpg}">
+                                	<span class="overlay-img">Chapter2 Pinocchio</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-09.jpg}" alt="ディズニー・スタジオによる長編アニメーション作品の第二作。ウォルトは『白雪姫』の成功を踏まえ、妥協を許さぬ姿勢で、高度な技術や取り組みを実践した。その代表的なものがマルチプレーン・カメラの活用である。マルチプレーン・カメラは、シリー・シンフォニー・シリーズの『風車小屋のシンフォニー』や『白雪姫』でも使われていたが、『ピノキオ』の冒頭、朝の場面におけるマルチプレーン・カメラでの数十秒のシーンは、奥行きと立体感を表現した傑作シーンと言える。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+                        	<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter5">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="シュガーラッシュ(2012)" th:href="@{/images/history/work/full/image-28-full.jpg}">
+                                	<span class="overlay-img">Chapter5 Wreck-It Ralph</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-28.jpg}" alt="ゲームに登場するキャラクターたちを主人公にした異色の冒険ファンタジー。製作総指揮を務めたジョン・ラセター監督作品『トイ・ストーリー』のゲーム版とも言える世界観で、緻密な脚本をもとにした秀逸な物語となっている。昔のゲームはドットが粗く、最近のゲームは解像度が高いといった、ゲームならではの世界を巧みに表現したCGも印象に残る。また、原宿ガールなど日本的な要素もちりばめられている。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+                        	<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter1">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="ミッキーのハワイ旅行(1937)" th:href="@{/images/history/work/full/image-07-full.jpg}">
+                                	<span class="overlay-img">Chapter1 Hawaiian Holiday</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-07.jpg}" alt="ミッキーマウスやミニーマウスの活躍する短編アニメーション作品は、1928年から1950年代にかけて、100本以上が制作された。1935年に制作された『ミッキーの自動車修理』からは、ドナルドダックやグーフィーといったお馴染みの仲間たちも登場。この『ミッキーのハワイ旅行』も、ハワイでバカンスを楽しむミッキー、ミニー、ドナルド、グーフィー、プルートのアンサンブルが愉快な一作。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+                        	<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter4">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="美女と野獣(1991)" th:href="@{/images/history/work/full/image-18-full.jpg}">
+                                	<span class="overlay-img">Chapter4 Beauty and the Beast</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-18.jpg}" alt="J・L・ド・ボーモンによる『美女と野獣』を、ミュージカルアニメーションとして制作。高い芸術性と娯楽性を兼ね備えた作品として、アニメーション史上初めて、アカデミー賞作品賞ノミネートとなった。前作『リトル・マーメイド』に引き続いて、ハワード・アシュマンとアラン・メンケンのコンビが音楽を担当。ドラマチックな名曲の数々を作り上げた。また、ヒロインのベルと野獣がダンスを踊るシーンでは、３DCGを導入。従来のセル+背景画の技術では難しかった、自在なカメラワークが可能となった。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+                        	<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter3">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="眠れる森の美女(1959)" th:href="@{/images/history/work/full/image-12-full.jpg}">
+                                	<span class="overlay-img">Chapter3 Sleeping Beauty</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-12.jpg}" alt="シャルル・ペローの原作をもとに、６年の歳月を掛けて制作された大作。背景美術を担当したアイヴァンド・アールは、中世ヨーロッパゴシック様式の絵画などを参考に、独自の世界観を構築。重厚かつスタイリッシュな背景画に合わせて、キャラクターのフォルムも直線を重視したものに変更された。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+							<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter5">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="アナと雪の女王(2013)" th:href="@{/images/history/work/full/image-29-full.jpg}">
+                                	<span class="overlay-img">Chapter5 Frozen</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-29.jpg}" alt="アンデルセンの童話『雪の女王』を原作に、みずから行動する現代的な二人のヒロイン、心に響く歌、映像の美しさなどさまざまな魅力が合わさり、全世界で大ヒットした。物語の舞台となるアレンデール王国を描くにあたり、スタッフはノルウェーでのロケハンを行い、地形や建築物、インテリア、登場人物たちの衣装などをリサーチした。また、雪を表現するために、新たなシステムを開発。約2000種類もの雪の結晶モデルを作り、それらが実際のCG制作にも活かされている。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+                        	<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter2">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="ファンタジア(1940)" th:href="@{/images/history/work/full/image-10-full.jpg}">
+                                	<span class="overlay-img">Chapter2 Fantasia</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-10.jpg}" alt="クラシックのコンサート・プログラムとアニメーション映像の融合を目指して作られた歴史的名作。ディズニー・スタジオは、“ファンタサウンド”と呼ばれる音響の録音・再生システムを開発。これによってコンサートホールにいるような音響効果を得ることができた。映画はプレミアショーでは賞賛されたものの、実際にファンタサウンドの音響装置を据えることができた劇場は数少なく、興行はうまくいかなかった。だが、再上映を重ねるうちに、その芸術性の高さが認められ、後にディズニーを代表する作品となった。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+                        	<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter2">
+                            	<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="ダンボ(1941)" th:href="@{/images/history/work/full/image-15-full.jpg}">
+                                	<span class="overlay-img">Chapter2 Dumbo</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <!-- Thumb Image and Description -->
+                                <img th:src="@{/images/history/work/thumbs/image-15.jpg}" alt="象が空を飛ぶ「想像力」が際立つ作品。言葉を話さないダンボは、感情を顔や身体をいっぱいに使って表現されている。優秀なアニメーターたちが肩の力を抜いて描いた空飛ぶ象・ダンボの愛らしさ、母象のジャンボが“わたしの赤ちゃん” を歌うシーンなど見どころも多く、作品は世界の人々に受け入れられ、大ヒットした。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+                        	<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter4">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="ライオン・キング(1994)" th:href="@{/images/history/work/full/image-24-full.jpg}">
+                                	<span class="overlay-img">Chapter4 The Lion King</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-24.jpg}" alt="アフリカのサバンナを舞台に、野生動物たちが繰り広げる壮大な物語。制作スタッフは実際にアフリカに赴き、アニメーターは野生動物の動きを、美術スタッフはサバンナの光景を観察しスケッチした。こうした『バンビ』の頃から続く伝統的な手法に加え、映画のクライマックスで描かれる、ヌーの大群が暴走するシーンでは、最新のCG技術を導入。ベースとなる手描きの一頭をCGで何千頭に増やして動かした。約２分半のこのシーンの制作に、１年半もの時間が費やされたという。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+                        	<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter2">
+                            	<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="バンビ(1942)" th:href="@{/images/history/work/full/image-13-full.jpg}">
+                                	<span class="overlay-img">Chapter2 Bambi</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <!-- Thumb Image and Description -->
+                                <img th:src="@{/images/history/work/thumbs/image-13.jpg}" alt="子鹿のバンビを主人公に、森に生きる動物たちの姿をリアルな描写で描いた。ウォルトは動物たちの動きにこだわり、スタジオに動物画家を招聘し、美術クラスを開講。また、本物の鹿をスタジオで飼い、アニメーターたちに観察とスケッチをさせた。この手法は後年の『ライオン・キング』（1994）などにも継承されている。また、タイラス・ウォンという中国系アメリカ人が描いたコンセプト・アートは、水墨画のような背景画を描くのに、大きな影響を与えた。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+                        	<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter5">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="ベイマックス(2013)" th:href="@{/images/history/work/full/image-30-full.jpg}">
+                                	<span class="overlay-img">Chapter5 Big Hero 6</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-30.jpg}" alt="サンフランソウキョウを舞台に、日本人の主人公ヒロとロボットのベイマックスとの冒険と友情を描く。スタッフは東京とサンフランシスコからインスピレーションを得た街を作り上げた。また、いくつかのロボット工学関連施設を見学し、その際に見つけた医療用空気注入型ロボットを元にベイマックスの造型を考えた。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+                        	<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter1">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="ミッキーの芝居見物(1941)" th:href="@{/images/history/work/full/image-11-full.jpg}">
+                                	<span class="overlay-img">Chapter1 Orphan's Benefit, Orphans' Benefit</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-11.jpg}" alt="1932年、テクニカラー社が三原色に基づくカラーフィルムを発表。映画に色が付くという、トーキーに続く大きな技術革新が起きた。ウォルトは、まだ初期の実験段階の技術だったにも拘わらず、テクニカラー社と向こう２年間のアニメーション映画における独占使用権を獲得した。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+                        	<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter4">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="ポカホンタス(1995)" th:href="@{/images/history/work/full/image-25-full.jpg}">
+                                	<span class="overlay-img">Chapter4 Pocahontas</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-25.jpg}" alt="アメリカ大陸に住むネイティブ・アメリカンの娘ポカホンタスと、イギリス探検隊のジョン・スミスの交流を描くラブストーリー。ポカホンタスは17世紀初頭に実在したネイティブ・アメリカンの娘で、こうした実在の人物をヒロインとしたのはディズニー・アニメーションとしては初の試みだった。音楽は『美女と野獣』などを手掛けたアラン・メンケン。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+                        	<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter3">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="101匹わんちゃん(1961)" th:href="@{/images/history/work/full/image-14-full.jpg}">
+                                	<span class="overlay-img">Chapter3 One Hundred and One Dalmatians</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-14.jpg}" alt="原作はドディー・スミスの『ダルメシアン100と１ぴきの犬の物語』。従来の童話をもとにした物語とは異なり、現代を舞台にするという新たな試みがなされている。また、これまでは紙に鉛筆で描かれていたキャラクターをセル画に引き写すのは人間の手で行われていたが、本作よりゼロックスによるマシントレス（コピー）が導入された。これによって、斑点のある沢山の子犬をひとつの画面に登場させるといった、手描きでは不可能に近かった表現が可能になった。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+                        	<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter5">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="ズートピア(2016)" th:href="@{/images/history/work/full/image-31-full.jpg}">
+                                	<span class="overlay-img">Chapter5 Zootopia</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-31.jpg}" alt="時代に呼応するように「多様性」をテーマとし、動物によって築かれた都市・ズートピアを舞台に、ウサギの新米警察官とキツネの詐欺師のコンビが活躍する新感覚のバディ･ムービー。スタッフは8ヶ月に渡り、ケニアやサンディエゴのサファリパーク、自然史博物館などで、登場する動物たちの動きや毛並みなどを調査・研究。さまざまな大きさの動物たち、そして彼らが暮らす街並みを作り上げた。動物たちのリアルな毛並みの表現については、本作のために“iGroom”というソフトを開発。これによって動物ごとの毛並みの描き分けなどが可能となった。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+                        	<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter4">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="ムーラン(1998)" th:href="@{/images/history/work/full/image-26-full.jpg}">
+                                	<span class="overlay-img">Chapter4 Mulan</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-26.jpg}" alt="ディズニー作品として初のアジアを舞台にした作品。いにしえの中国を舞台に、ヒロインのムーランが戦乱の世に立ち向かい自らの道を切り拓いていく物語。スタッフは中国を訪れ、３週間ほど滞在。観察や記録、スケッチをし、作品作りに生かした。背景は中国絵画の伝統を踏まえ、実際の舞台をリアルに再現するのではなく、大胆に省略。シンプルかつ様式的な美術を目指した。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+                        	<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter3">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="ジャングル・ブック(1967)" th:href="@{/images/history/work/full/image-16-full.jpg}">
+                                	<span class="overlay-img">Chapter3 The Jungle Book</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-16.jpg}" alt="イギリスの小説家、ドヤード・キプリングが1894年に書いた同名児童文学を大胆に脚色。ウォルト・ディズニーが生前に直接手掛けた最後の作品となった（劇場公開はウォルトの死の翌年）。脚本に目を通した声優がキャラクターのイメージを作りあげ、彼らの声の調子や表情に表現された個性を、アニメーターが視覚化した。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+                        	<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter2">
+                            	<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="ラテン・アメリカの旅(1943)" th:href="@{/images/history/work/full/image-20-full.jpg}">
+                                	<span class="overlay-img">Chapter2 Saludos Amigos</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <!-- Thumb Image and Description -->
+                                <img th:src="@{/images/history/work/thumbs/image-20.jpg}" alt="1941年8月から２ヶ月あまり、ウォルト・ディズニーをはじめとするアニメーション制作スタッフが南米視察旅行に出掛けた。『ラテン・アメリカの旅』は、その際に撮影された実写映像と、南米を舞台にした４本の短編アニメーションで構成されたオムニバス作品だ。この視察旅行で南米特有の色彩感覚に触発され、鮮やかな色使いで頭角を現すのがメアリー・ブレアである。この後の多くの作品でカラー・スタイリストとしてコンセプト・アートなどを手掛けることとなる。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+                        	<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter4">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="ターザン(1999)" th:href="@{/images/history/work/full/image-21-full.jpg}">
+                                	<span class="overlay-img">Chapter4 TARZAN</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-21.jpg}" alt="エドガー・ライス・バローズの原作はこれまで何度も映像化されてきたが、本作はアニメーションならではの面白さに満ちた作品として、全世界でヒットした。1990年代のディズニー作品を作画の面から支えたグレン・キーンによる、ターザンやゴリラのアクションは、人間の筋肉や骨格を的確に捉えつつも大胆に省略するなど見事な描写となっている。" />
+                            </li>
+                        	<!-- End Item Project -->
+
+                        	<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 Chapter5">
+                            	<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="モアナと伝説の海(2016)" th:href="@{/images/history/work/full/image-08-full.jpg}">
+                                	<span class="overlay-img">Chapter5 Moana</span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <img th:src="@{/images/history/work/thumbs/image-08.jpg}" alt="2017年3月10日（金）日本公開予定の、ディズニー・アニメーション最新作。主人公の“海に選ばれた”少女モアナが、愛する人々と滅び行く世界を救うため、悩み傷つきながらも大海原での冒険を繰り広げる物語。「ピノキオ」や「リトル・マーメイド」で開発・進化した「水」の表現が最新技術の導入により格段にレベルアップし、まるで生きているかのようなキャラクターとして描かれている点にも注目されている。" />
+                            </li>
+                        	<!-- End Item Project -->
+                        </ul>
+                    </section>
+            	</div>
+            </div>
+        </div>
+        <!-- End Portfolio Projects -->
+    </div>
+</div>
+<!-- End Our Work Section -->
+
+<!-- About Section -->
+<div id="about" class="page-alternate">
+<div class="container">
+    <!-- Title Page -->
+    <div class="row">
+        <div class="span12">
+            <div class="title-page">
+                <h2 class="title">Legend</h2>
+                <h3 class="title-description">Disney Legends.</h3>
+            </div>
+        </div>
+    </div>
+    <!-- End Title Page -->
+
+    <!-- People -->
+    <div class="row">
+
+        <!-- Start Profile -->
+    	<div class="span4 profile">
+        	<div class="image-wrap">
+                <div class="hover-wrap">
+                    <span class="overlay-img"></span>
+                    <span class="overlay-text-thumb">Alan Menken</span>
+                </div>
+                <img th:src="@{/images/history/profile/profile-01.jpg}" alt="Alan Menken" />
+            </div>
+            <h3 class="profile-name">アラン・メンケン</h3>
+            <p class="profile-description">1949年7月22日、アメリカ／ニューヨーク州ニュー・ロッシェル生まれ
+			舞台ミュージカルでキャリアをスタートさせ、
+			1982年のミュージカル『リトル・ショップ・オブ・ホラーズ』の大ヒットで注目を浴びる。
+			初の映画音楽作品は同作の映画版。1989年のディズニー映画『リトル・マーメイド』以降、
+			数々のディズニー作品の音楽を担当する事になる。
+			作曲家としてのアカデミー賞受賞8度（2011年5月現在）は、
+			アルフレッド・ニューマンの9度に次ぐ、史上2番目の数である。</p>
+
+        </div>
+        <!-- End Profile -->
+
+        <!-- Start Profile -->
+    	<div class="span4 profile">
+        	<div class="image-wrap">
+                <div class="hover-wrap">
+                    <span class="overlay-img"></span>
+                    <span class="overlay-text-thumb">Walt Disney</span>
+                </div>
+                <img th:src="@{/images/history/profile/profile-02.jpg}" alt="Walt Disney" />
+            </div>
+            <h3 class="profile-name">ウォルト・ディズニー</h3>
+            <p class="profile-description">1901年－1966年 アメリカ・イリノイ州シカゴ生まれ。
+            本名ウォルター・イライアス・ディズニー（Walter Elias Disney）。
+            家族の娯楽に対する望みを天才的に察知し、次々と新しいエンターテイメントを生み出していくクリエイター。
+            1955年のディズニーランド・パークで成功を収めた後は、
+            アメリカ都市の問題解決につながるだろうと実験的未来都市エプコット（EPCOT）のパーク計画に専念、
+            さらにそれを含むウォルト・ディズニー・ワールド・プロジェクトに自身の夢を賭けるが、建設中の1966年、
+            その完成を見ることなく死去。ウォルト・ディズニー・ワールド・リゾートは、
+            その後、兄のロイがウォルトの意思を受け継ぎ、5年後の1971年にオープンした。
+            リゾートの名称は、亡きウォルトの功績を称え、当初のディズニー・ワールドから、
+            ウォルト・ディズニー・ワールドへと変更された。</p>
+        </div>
+        <!-- End Profile -->
+
+        <!-- Start Profile -->
+    	<div class="span4 profile">
+        	<div class="image-wrap">
+                <div class="hover-wrap">
+                    <span class="overlay-img"></span>
+                    <span class="overlay-text-thumb">Mary Blair</span>
+                </div>
+                <img th:src="@{/images/history/profile/profile-03.jpg}" alt="Mary Blair" />
+            </div>
+            <h3 class="profile-name">メアリー・ブレア</h3>
+            <p class="profile-description">1911年、アメリカのオクラホマ州に生まれる。高校卒業後、
+            サンノゼ州立大学に進学し、アーティストを目指すようになる。
+            また、シュイナード芸術学校では水彩画を学ぶ。卒業後にリー・ブレアと結婚し、
+            1939年、ディズニースタジオに所属する。
+			2年後に一時的に退職するが、すぐに復帰し、新作の製作のための南米視察旅行に参加する。
+			この旅行中にウォルト・ディズニーに才能を認められ、ディズニーの作品に多くかかわるようになるも、
+			1953年に退社、広告・イラストなどの世界に活動の幅を広げた。</p>
+
+        </div>
+        <!-- End Profile -->
+
+    </div>
+    <!-- End People -->
+</div>
+</div>
+<!-- End About Section -->
+
+				<div class="title-page">
+                    <h3><a th:href="@{/login/complete}">MENUへ</a></h3>
+                    <h5><a th:href="@{/logout}">LOGOUT</a></h5>
+                </div>
+
+<!-- Back To Top -->
+<a id="back-to-top" href="#">
+	<i class="font-icon-arrow-simple-up"></i>
+</a>
+<!-- End Back to Top -->
+
+<!-- Js -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> <!-- jQuery Core -->
+<script th:src="@{/js/history/bootstrap.min.js}"></script> <!-- Bootstrap -->
+<script th:src="@{/js/history/supersized.3.2.7.min.js}"></script> <!-- Slider -->
+<script th:src="@{/js/history/waypoints.js}"></script> <!-- WayPoints -->
+<script th:src="@{/js/history/waypoints-sticky.js}"></script> <!-- Waypoints for Header -->
+<script th:src="@{/js/history/jquery.isotope.js}"></script> <!-- Isotope Filter -->
+<script th:src="@{/js/history/jquery.fancybox.pack.js}"></script> <!-- Fancybox -->
+<script th:src="@{/js/history/jquery.fancybox-media.js}"></script> <!-- Fancybox for Media -->
+<script th:src="@{/js/history/jquery.tweet.js}"></script> <!-- Tweet -->
+<script th:src="@{/js/history/plugins.js}"></script> <!-- Contains: jPreloader, jQuery Easing, jQuery ScrollTo, jQuery One Page Navi -->
+<script th:src="@{/js/history/main.js}"></script> <!-- Default JS -->
+<!-- End Js -->
+
+</body>
+</html>

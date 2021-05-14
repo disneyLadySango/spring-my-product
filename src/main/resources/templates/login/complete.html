@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+	<head>
+		<title>Thank You Login</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script th:src="@{/js/ie/html5shiv.js}"></script>
+		<link rel="stylesheet" th:href="@{/css/main.css}" />
+		<link rel="stylesheet" th:href="@{/css/noscript.css}" />
+		<link rel="stylesheet" th:href="@{/css/ie8.css}" />
+		<link rel="stylesheet" th:href="@{/css/ie9.css}" />
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="main">
+				<div id="reel">
+					<!-- Header Item -->
+					<div id="header" class="item" data-width="400">
+						<div class="inner">
+							<h1>Welcome!</h1>
+							<p><strong>MENU</strong></p>
+							<p><a th:href="@{/index/search}"> >>Films</a></p>
+							<p><a th:href="@{/history}"> >>History（おまけ）</a></p>
+							<p><a href="https://store.disney.co.jp/" target="_blank">>>Store @Official</a></p>
+						</div>
+					</div>
+					<!-- Thumb Items -->
+					<article class="item thumb" data-width="282">
+						<h2>Mickey Mouse</h2>
+						<a th:href="@{/images/fulls/01.jpg}" class="image">
+						<img th:src="@{/images/thumbs/01.jpg}" alt="" /></a>
+					</article>
+					<article class="item thumb" data-width="384">
+						<h2>Minnie Mouse</h2>
+						<a th:href="@{/images/fulls/02.jpg}" class="image">
+						<img th:src="@{/images/thumbs/02.jpg}" alt="" /></a>
+					</article>
+					<article class="item thumb" data-width="220">
+					</article>
+					<article class="item thumb" data-width="274">
+						<h2>Donald Fauntleroy Duck</h2>
+						<a th:href="@{/images/fulls/03.jpg}" class="image">
+						<img th:src="@{/images/thumbs/03.jpg}" alt="" /></a>
+					</article>
+					<article class="item thumb" data-width="282">
+						<h2>Daisy Duck</h2>
+						<a th:href="@{/images/fulls/04.jpg}" class="image">
+						<img th:src="@{/images/thumbs/04.jpg}" alt="" /></a>
+					</article>
+					<article class="item thumb" data-width="160">
+					</article>
+					<article class="item thumb" data-width="326">
+						<h2>Goofy , Max</h2>
+						<a th:href="@{/images/fulls/05.jpg}" class="image">
+						<img th:src="@{/images/thumbs/05.jpg}" alt="" /></a>
+					</article>
+					<article class="item thumb" data-width="111">
+					</article>
+					<article class="item thumb" data-width="272">
+						<h2>Pluto</h2>
+						<a th:href="@{/images/fulls/06.jpg}" class="image">
+						<img th:src="@{/images/thumbs/06.jpg}" alt="" /></a>
+					</article>
+					<article class="item thumb" data-width="352">
+						<h2>Chip 'n Dale , Clarice</h2>
+						<a th:href="@{/images/fulls/07.jpg}" class="image">
+						<img th:src="@{/images/thumbs/07.jpg}" alt="" /></a>
+					</article>
+					<article class="item thumb" data-width="190">
+					</article>
+					<article class="item thumb" data-width="348">
+						<h2>Duffy , ShellieMay</h2>
+						<a th:href="@{/images/fulls/08.jpg}" class="image">
+						<img th:src="@{/images/thumbs/08.jpg}" alt="" /></a>
+					</article>
+				</div>
+			</div>
+			<div id="footer">
+				<div class="left">
+					<p>All our
+						<strong>dreams can come true</strong>, <br />
+						if we have the courage to pursue them.<br />
+						<strong>I only hope</strong> that we don't
+						 lose sight of one thing –<br />
+						that it was all started
+						<a href="http://www.disney.co.jp/fc/mickey-friends/character/mickey.html" target="_blank">
+						by a mouse.</a></p>
+				</div>
+				<div class="right">
+					<ul class="contact">
+						<li><a href="https://twitter.com/disneystudiojp" class="icon fa-twitter" target="_blank">
+						<span class="label">Twitter</span></a></li>
+						<li><a href="https://www.instagram.com/tokyodisneyresort_official/" class="icon fa-instagram" target="_blank">
+						<span class="label">Instagram</span></a></li>
+						<li><a href="https://ja-jp.facebook.com/DisneyJapan/" class="icon fa-facebook" target="_blank">
+						<span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>Click >></li><li> <a onClick="return confirm('ログアウトしますか？')"
+						th:href="@{/logout}">LOGOUT</a></li>
+					</ul>
+					<ul class="admin" sec:authorize="hasRole('ROLE_ADMIN')">
+						<li><a href="#">ADMIN MENU(工事中)</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+
+			<script th:src="@{/js/jquery.min.js}"></script>
+			<script th:src="@{/js/jquery.poptrox.min.js}"></script>
+			<script th:src="@{/js/skel.min.js}"></script>
+			<script th:src="@{/js/skel-viewport.min.js}"></script>
+			<script th:src="@{/js/util.js}"></script>
+			<script th:src="@{/js/ie/respond.min.js}"></script>
+			<script th:src="@{/js/main.js}"></script>
+
+	</body>
+</html>

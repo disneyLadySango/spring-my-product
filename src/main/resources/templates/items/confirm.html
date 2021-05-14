@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title th:if="${itemsForm.id != null}">商品情報管理システム - 修正</title>
+	<title th:if="${itemsForm.id == null}">商品情報管理システム - 新規投稿</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+	<h1 th:if="${itemsForm.id != null}">商品情報登録 - 修正</h1>
+	<h1 th:if="${itemsForm.id == null}">商品情報登録 - 新規投稿</h1>
+	<hr />
+	<h2>以下の内容で商品内容の更新を行います。よろしいですか。</h2>
+	<hr />
+	<div id="itemsEditForm">
+		<form method="post" th:action="@{/items/update}" th:object="${itemsForm}" enctype="multipart/form-data">
+			<div th:if="${__*{id}__ != null}" class="id">
+				<label>ID</label>
+				<span th:text="*{id}"></span>
+				<input type="hidden" th:field="*{id}" />
+			</div>
+			<br />
+			<div class="name">
+				<label>商品名</label>
+				<span th:text="*{name}">商品名</span>
+				<input type="hidden" th:field="*{name}" />
+			</div>
+			<br />
+			<div class="price">
+				<label>商品価格
+				<span th:text="*{price}">商品価格</span>円</label>
+				<input type="hidden" th:field="*{price}" />
+			</div>
+			<br />
+			<div class="description">
+				<label>商品説明</label><br /><hr />
+				<span th:utext="*{description}">商品説明</span>
+				<input type="hidden" th:field="*{description}" />
+			</div>
+			<br />
+			<div class="tags">
+				<label>分類タグ</label>
+				<div>
+					<th:block th:each="tags: ${tagsList}">
+						<input type="checkbox" th:value="${tags.id}" th:field="*{tags}" disabled="disabled" />
+						<span th:text="${tags.name}"></span>
+					</th:block>
+					<th:block th:each="tags : *{tags}">
+						<input type="hidden" th:name="tags" th:value="${tags}" />
+					</th:block>
+				</div>
+			</div>
+			<br />
+			<div class="image">
+				<label>画像</label>
+				<div>
+					<input type="hidden" th:field="*{imageId}" />
+					<th:block th:if="${__*{deleteImage}__ != true}">
+						<th:block th:if="${itemsForm.imageDataUriScheme == null}">
+							<img th:src="'images/' + *{imageId}" alt=""
+								 th:if="${__*{imageId}__ != null}" />
+							<span th:if="${__*{imageId}__ == null}">なし</span>
+						</th:block>
+						<th:block th:if="${itemsForm.imageDataUriScheme != null}">
+							<img th:src="*{imageDataUriScheme}" alt=""
+								 th:if="${itemsForm.imageDataUriScheme != null}" />
+							<input type="hidden" th:field="*{imageDataBase64}" />
+						</th:block>
+					</th:block>
+					<th:block th:if="${__*{deleteImage}__ == true}">
+						<span th:if="${__*{deleteImage}__ == true}">＜削除＞</span>
+						<input type="hidden" th:field="*{deleteImage}" />
+					</th:block>
+				</div>
+			</div>
+			<div class="submit">
+				<input type="button" onClick="javascript:history.back()" value="戻る" />
+				<input th:if="${__*{id}__ != null}" type="submit" value="更新" />
+				<input th:if="${__*{id}__ == null}" type="submit" value="新規追加" />
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>

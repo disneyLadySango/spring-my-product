@@ -1,0 +1,413 @@
+@CHARSET "UTF-8";
+
+/*
+---------------------------------
+〇〇〇全てのページ共通部分〇〇〇
+---------------------------------
+*/
+
+
+html, body {
+	text-align: center;
+	}
+
+div, span, input, textarea {
+	margin: 5px 0;
+}
+
+.left {
+	text-align: left;
+}
+
+.center {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+
+.inblock {
+	display: inline-block;
+}
+
+.error {
+	color: red;
+	font-weight; bold;
+	font-style: italic;
+}
+
+.button {
+	display: inline-block;
+	min-width: 50px;
+	padding: 2px 10px;
+	margin: 0px;
+	text-align: center;
+	border: #888 1px solid;
+	border-radius: 4px;
+	background: linear-gradient(#999, #fff);
+	color: black;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+#main {
+	width: 1024px;
+	margin: 0 auto;
+	padding: 0;
+}
+h1{
+	text-align: center;
+}
+/*
+---------------------------------------------
+ログイン画面
+----------------------
+
+/*
+--------------------------------------------------------------------------------------------
+～indexの部分～
+--------------------------------------------------------------------------------------------
+*/
+
+/*
+-------------------------
+～itemsの新規追加ボタン～
+-------------------------
+*/
+
+#newitem {
+	display: block;
+	margin: 0 auto;
+	width: 80px;
+	position: relative;
+	top: -40px;
+	left: 440px;
+	height: 0;
+}
+
+#newitem .button {
+	width: 90px;
+}
+/*
+------------------
+～検索用フォーム～
+------------------
+*/
+#searchForm{
+	float: left;
+	width: 200px;
+	margin: 10px auto;
+	padding: 10px;
+	border: #bbb 1px solid;
+	border-radius: 5px;
+	text-align: left;
+
+}
+#searchForm .title{
+	text-align: center;
+	font-size: 24px
+}
+
+#searchForm .keyword input{
+	width: 300px
+}
+
+#searchForm input[type='checkbox'] {
+	margin: 0 5px;
+}
+
+#searchtForm input[type='radio'] {
+	margin: 5px;
+}
+
+#searchForm hr {
+	margin: 0;
+}
+
+#searchForm .tags {
+	min-height: 54px;
+}
+
+#searchForm .tags span {
+	font-size: 14px;
+}
+
+#searchForm .keyword input[type='text'] {
+	width: 194px;
+	font-size: 16px;
+}
+
+#searchForm .submit {
+	margin-top: 10px;
+}
+
+#searchForm .submit input[type='submit'] {
+	width: 80px;
+}
+
+#searchForm strong{
+	color: blue;
+}
+
+#searchForm .search .title strong{
+	text-align: center;
+	font-size: 18px
+}
+
+/*
+------------------
+～商品一覧～
+------------------
+*/
+
+
+#itemsList {
+	float: left;
+	width: 770px;
+	margin-left: 10px;
+}
+#itemsList hr {
+	margin: 1px;
+}
+#itemsList .items{
+	width: 100%;
+	border: #bbb 1px solid;
+	border-radius: 5px;
+	padding: 10px;
+	text-align: left;
+}
+
+#itemsList .items .imageList ,
+#itemsList .items .itemstext {
+	display: inline-block;
+	vertical-align: top;
+	margin: 10px;
+}
+
+
+#itemsList .items .imageList {
+	width: 150px;
+}
+
+#itemsList .items .itemstext {
+	width: 550px;
+}
+#itemsList .items .image img{
+	max-width: 150px;
+	max-height: 150px;
+	border: #aaa 1px solid;
+}
+#itemsList .items label {
+	display: inline-block;
+	width: 120px;
+}
+
+#itemsList .items .id{
+	font-size: 15px;
+	display: inline-block;
+}
+
+#itemsList .items .id span {
+	display: inline-block;
+	width: 30px;
+}
+#itemsList .items .task{
+	display: inline-block;
+}
+
+#itemsList .items .task span{
+	display: inline-block;
+}
+#itemsList .items .name span{
+	display: inline-block;
+	font-size: 18px;
+}
+#itemsList .items .price label{
+	display: inline-block;
+}
+#itemsList .items .price span{
+	display: inline-block;
+}
+#itemsList .items .tags label {
+	vertical-align: top;
+}
+
+#itemsList .items .tags div {
+	display: inline-block;
+	margin: 0;
+	width: 440px;
+}
+
+#itemsList .items .description .descriptionEll{
+	overflow: hidden;
+  	height: 6em;
+    line-height: 1.2;
+
+
+}
+
+
+#itemsList .items .description .descriptionEll span{
+	padding: 0 5px;
+	font-size: 12px;
+
+}
+/*
+display: -webkit-box;
+			-webkit-line-clamp: 5;
+			-webkit-box-orient: vertical;
+text-overflow: ellipsis;
+
+
+*/
+
+#itemsList .items .itemstext {
+	display: inline-block;
+}
+
+/*
+------------------------
+footer
+------------------------
+*/
+
+#footer {
+  text-align: center;
+  clear: both;
+  margin: 0;
+  padding: 0.5em 0;
+}
+
+
+/*
+---------------------------------
+ Edit用フォーム
+---------------------------------
+*/
+#itemsEditForm {
+	width: 800px;
+	margin: 10px auto;
+	padding: 10px;
+	border: #bbb 1px solid;
+	border-radius: 5px;
+	text-align: left;
+}
+
+#itemsEditForm input[type='checkbox'] {
+	margin: 2px 5px;
+}
+
+#itemsEditForm input[type='radio'] {
+	margin: 5px;
+}
+
+#itemsEditForm hr {
+	margin: 0;
+}
+
+#itemsEditForm label {
+	display: inline-block;
+	width: 120px;
+	vertical-align: top;
+	margin-top: 8px;
+}
+
+#itemsEditForm .name input[type='text'] {
+	width: 480px;
+	font-size: 16px;
+}
+
+#itemsEditForm .price input[type='number'] {
+	width: 100px;
+	font-size: 16px;
+	text-align: right;
+}
+
+#itemsEditForm .tags label{
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 8px;
+	text-size: 24px;
+}
+
+#itemsEditForm .tags  {
+	display: inline-block;
+	width: 680px;
+}
+
+#itemsEditForm .tags p {
+	margin: 2px;
+	display: inline-block;
+	white-space: nowrap;
+}
+
+#itemsEditForm .description label {
+	vertical-align: top;
+	margin-top: 8px;
+}
+
+#itemsEditForm .description textarea {
+	width: 680px;
+	height: 150px;
+}
+
+#itemsEditForm .itemsImage label {
+	vertical-align: top;
+	margin-top: 8px;
+}
+
+#itemsEditForm .itemsImage  {
+	display: inline-block;
+}
+
+#itemsEditForm .image img {
+	max-width: 200px;
+	max-height: 200px;
+	border: #bbb 1px solid;
+}
+
+#main .submit {
+	text-align: center;
+	margin: 30px 0 50px 0;
+}
+
+#main .submit input {
+	width: 80px;
+}
+
+#itemsEditForm .description {
+	display: inline-block;
+	width: 680px;
+}
+
+#itemsEditForm .description textarea {
+	/*font-size: 14px;*/
+}
+
+#itemsEditForm .complete {
+	text-align: center;
+	padding: 20px 0;
+}
+
+#itemsEditForm .complete span {
+	vertical-align: middle;
+}
+
+#itemsEditForm .deleted {
+	text-align: center;
+	padding: 20px 0;
+}
+
+#itemsEditForm .deleted span {
+	vertical-align: middle;
+}
+
+#itemsEditForm .internalError {
+	text-align: center;
+	padding: 20px 0;
+}
+
+#itemsEditForm .internalError span {
+	vertical-align: middle;
+}

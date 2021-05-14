@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title th:if="${itemsForm.id != null}">商品情報管理システム - 修正</title>
+	<title th:if="${itemsForm.id == null}">商品情報管理システム - 新規投稿</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+
+<body>
+	<h1 th:if="${itemsForm.id != null}">商品情報登録 - 修正</h1>
+	<h1 th:if="${itemsForm.id == null}">商品情報登録 - 新規投稿</h1>
+	<hr />
+	<div id="main">
+		<form method="post" th:action="@{/items/confirm}" th:object="${itemsForm}" enctype="multipart/form-data">
+			<div id="itemsEditForm">
+				<div th:if="${itemsForm.id != null}" class="id">
+					<label>ID</label>
+					<span th:text="*{id}"></span>
+					<input type="hidden" th:field="*{id}" />
+				</div>
+				<br />
+				<div class="name">
+					<label>商品名：</label>
+					<input type="text" name="name" maxlength="64" th:field="*{name}" />
+				</div>
+				<br />
+				<div class="price">
+					<label>商品価格</label>
+					<input type="number" name="price" min="0" max="2147483647" th:field="*{price}" />
+				</div>
+				<hr />
+				<div class="description">
+					<label>商品説明</label>
+					<textarea name="description" maxlength="1024"
+						wrap="soft" th:field="*{description}"></textarea>
+				</div>
+				<hr />
+				<div class="tags">
+					<label>商品ジャンル</label>
+					<div>
+						<th:block th:each="tags : ${tagsList}">
+							<p>
+								<input type="checkbox" th:value="${tags.id}" th:field="*{tags}" />
+								<span th:text="${tags.name}"></span>
+							</p>
+						</th:block>
+					</div>
+				</div>
+				<hr/>
+				<br />
+				<div class="itemsImage">
+					<label>画像</label>
+					<br/>
+					<div class="image">
+						<th:block th:if="${__*{imageId}__ != null}">
+							<img th:src="'images/' + *{imageId}" alt="" />
+							<input type="checkbox" th:field="*{deleteImage}" />画像削除
+							<input type="hidden" th:field="*{imageId}" />
+							<br />
+						</th:block>
+						<input type="file" name="imageData" />
+					</div>
+				</div>
+				<hr/>
+				<div class="submit">
+					<input type="button" onClick="javascript:history.back()" value="戻る" />
+					<input th:if="${itemsForm.id != null}" type="submit" value="確認画面へ" />
+					<input th:if="${itemsForm.id == null}" type="submit" value="新規追加確認画面へ" />
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

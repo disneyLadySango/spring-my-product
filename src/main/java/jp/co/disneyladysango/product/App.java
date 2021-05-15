@@ -14,9 +14,9 @@ import org.springframework.scheduling.annotation.EnableAsync;
  */
 @SpringBootApplication
 @EnableAsync
-@ComponentScan(basePackages = "jp.co.jwebgate.product")
-@EntityScan(basePackages = "jp.co.jwebgate.product.entities")
-@EnableJpaRepositories(basePackages = "jp.co.jwebgate.product.repositories")
+@ComponentScan(basePackages = "jp.co.disneyladysango.product")
+@EntityScan(basePackages = "jp.co.disneyladysango.product.entities")
+@EnableJpaRepositories(basePackages = "jp.co.disneyladysango.product.repositories")
 public class App {
 
     /**

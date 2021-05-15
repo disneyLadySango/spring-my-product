@@ -23,7 +23,7 @@ public class LoginController {
 
 	@RequestMapping(value = "" , method = RequestMethod.GET)
 	public String login(Model model){
-
+		System.out.println("kていない");
 		return "login";
 	}
 

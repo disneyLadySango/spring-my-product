@@ -55,10 +55,3 @@ CREATE TABLE IF NOT EXISTS `users_login` (
   `modified` DATETIME DEFAULT NULL COMMENT '更新日時',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE='utf8_unicode_ci' COMMENT='users_login';
-
-
-
-
-
-
-
